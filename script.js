@@ -1,5 +1,7 @@
 const textArea = document.querySelector(".text-area" );
 const mensaje = document.querySelector(".mensaje");
+const copia = document.querySelector(".copiar");
+copia.style.display = "none"
 
 
 // La letra "e" es convertida para "enter"
@@ -48,4 +50,11 @@ function desencriptar(stringDesencriptada){
     
     }
     return stringDesencriptada
+}
+
+function copiar(){
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value)
+    mensaje.value = "";
+    alert("Texto copiado")
 }
